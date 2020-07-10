@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { NotesService } from '../services/notes.service';
  
-import {AfterViewInit, ElementRef, ViewChild} from '@angular/core';
  
 @Component({
   selector: 'app-home',
@@ -11,7 +10,7 @@ import {AfterViewInit, ElementRef, ViewChild} from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  @ViewChild('alanBtnEl', {static:false}) alanBtnComponent: ElementRef<HTMLAlanButtonElement>;
+ 
  
   constructor(public notesService: NotesService, private alertCtrl: AlertController, private navCtrl: NavController){
     
@@ -48,22 +47,9 @@ export class HomePage implements OnInit {
  
   }
  
-  ngAfterViewInit(): void {
-    this.alanBtnComponent.nativeElement.addEventListener('command', (data) => {
-      const commandData = (<CustomEvent> data).detail;
- 
-      if(commandData.command === 'addTitle') {
-        console.log('Opening alert')
-        this.addNote()
-      }
-      
-      if(commandData.command === 'addTitle') {
-        this.notesService.createNote(commandData)
-      }
- 
-    })
-  }
+}
   
  
-}
+
+
 
