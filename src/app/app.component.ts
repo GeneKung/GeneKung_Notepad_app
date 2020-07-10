@@ -82,14 +82,15 @@ export class AppComponent {
       });
     }}
 
+  deleteNote(note){
+    this.notesService.deleteNote(note);
+    this.navCtrl.navigateBack('/notes');
+  }
+
   noteChanged(){
     this.notesService.save();
   }
-
-  deleteNote(note){
-    this.notesService.deleteNote(this.note);
-    this.navCtrl.navigateBack('/notes');
-  }
+  
 
   ngAfterViewInit(): void {
     this.alanBtnComponent.nativeElement.addEventListener('command', (data) => {
@@ -106,7 +107,11 @@ export class AppComponent {
       }
       
       if(commandData.command === 'deleteNote') {
-        this.deleteNote(commandData.note);
+        this.deleteNote(commandData.name);
+      }
+
+      if(commandData.command === 'AddContent') {
+        this.noteChanged();
       }
 
     })
