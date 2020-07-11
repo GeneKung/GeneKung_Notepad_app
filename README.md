@@ -9,5 +9,8 @@ The app was created by https://twitter.com/intent/user?screen_name=joshuamorony 
 This app uses the Alan AI software, a software that allows developers to voice enable any application, whether that be web based or mobile based. Please refer to https://alan.app/ for more information about the software. 
 
 <h1>Deploying this App</h1>
+In progress
+
 
 <h1>Alan AI voice Commands</h1>
+In progress
